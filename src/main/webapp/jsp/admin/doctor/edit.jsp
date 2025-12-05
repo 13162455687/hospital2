@@ -1,0 +1,130 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>编辑医生 - 医院预约挂号系统</title>
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    </head>
+
+    <body>
+        <!-- 导航栏 -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="${pageContext.request.contextPath}/jsp/index.jsp">医院预约挂号系统</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/jsp/index.jsp">网站首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/jsp/admin/index.jsp">管理员首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/jsp/admin/user/index.jsp">用户管理</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/jsp/admin/doctor/index.jsp">医生管理 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/jsp/admin/department/index.jsp">科室管理</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/jsp/admin/appointment/index.jsp">预约管理</a>
+                    </li>
+                    <li class="nav-item">
+                                <span class="nav-link text-primary">欢迎，${sessionScope.user.name}</span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="${pageContext.request.contextPath}/logout">退出登录</a>
+                            </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <div class="container mt-5">
+        <h2 class="mb-4">编辑医生</h2>
+        
+        <!-- 错误信息显示 -->
+        <c:if test="${not empty error}">
+            <div class="alert alert-danger" role="alert">
+                ${error}
+            </div>
+        </c:if>
+        
+        <!-- 编辑医生表单 -->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">医生信息</h5>
+                <form action="${pageContext.request.contextPath}/admin/doctor?action=update" method="post">
+                    <input type="hidden" name="id" value="${doctor.id}">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="name" class="form-label">姓名</label>
+                            <input type="text" class="form-control" id="name" name="name" value="${doctor.user.name}" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="deptId" class="form-label">科室</label>
+                            <select class="form-control" id="deptId" name="deptId" required>
+                                <c:forEach items="${departments}" var="dept">
+                                    <option value="${dept.id}" ${doctor.deptId == dept.id ? 'selected' : ''}>${dept.deptName}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="title" class="form-label">职称</label>
+                            <input type="text" class="form-control" id="title" name="title" value="${doctor.title}" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="specialty" class="form-label">专长</label>
+                            <input type="text" class="form-control" id="specialty" name="specialty" value="${doctor.specialty}" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="phone" class="form-label">手机号</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" value="${doctor.user.phone}" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="avatar" class="form-label">头像</label>
+                            <input type="text" class="form-control" id="avatar" name="avatar" value="${doctor.avatar}" placeholder="医生头像URL">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="status" class="form-label">状态</label>
+                        <select class="form-control" id="status" name="status" required>
+                            <option value="1" ${doctor.status == 1 ? 'selected' : ''}>启用</option>
+                            <option value="0" ${doctor.status == 0 ? 'selected' : ''}>禁用</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">更新医生</button>
+                    <a href="${pageContext.request.contextPath}/admin/doctor?action=list" class="btn btn-secondary ml-2">取消</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">© 2025 医院预约挂号系统. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
