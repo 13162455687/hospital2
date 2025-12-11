@@ -21,14 +21,37 @@ body {
 }
 
 /* 延迟动画效果 */
-.admin-card:nth-child(1) { animation-delay: 0.1s; }
-.admin-card:nth-child(2) { animation-delay: 0.2s; }
-.admin-card:nth-child(3) { animation-delay: 0.3s; }
-.admin-card:nth-child(4) { animation-delay: 0.4s; }
-.admin-card:nth-child(5) { animation-delay: 0.5s; }
-.admin-card:nth-child(6) { animation-delay: 0.6s; }
-.admin-card:nth-child(7) { animation-delay: 0.7s; }
-.admin-card:nth-child(8) { animation-delay: 0.8s; }
+.admin-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.admin-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.admin-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.admin-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.admin-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.admin-card:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.admin-card:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+.admin-card:nth-child(8) {
+    animation-delay: 0.8s;
+}
 
 .admin-card:hover {
     transform: translateY(-15px) scale(1.03);
@@ -237,8 +260,15 @@ body {
 
 /* 数字动画效果 */
 @keyframes countUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .badge {
@@ -296,7 +326,7 @@ body {
     .admin-card .card-body {
         padding: 2rem !important;
     }
-    
+
     /* 在大屏幕和中等屏幕之间添加过渡 */
     .admin-card .admin-card-icon {
         font-size: 3.5rem;
@@ -304,8 +334,9 @@ body {
 }
 
 @media (max-width: 1024px) {
+
     /* 调整卡片间距，确保在小屏幕上有足够的间距 */
-    .row-cols-lg-4 > * {
+    .row-cols-lg-4>* {
         flex: 0 0 auto;
         width: 50%;
     }
@@ -315,13 +346,13 @@ body {
     .admin-card {
         margin-bottom: 25px;
     }
-    
+
     /* 确保在中等屏幕上每行显示2列 */
-    .row-cols-lg-4 > * {
+    .row-cols-lg-4>* {
         flex: 0 0 auto;
         width: 50%;
     }
-    
+
     .admin-card .card-body {
         padding: 1.75rem !important;
     }
@@ -331,20 +362,20 @@ body {
     .admin-card-icon {
         font-size: 3rem;
     }
-    
+
     .admin-card .card-title {
         font-size: 1.1rem;
     }
-    
+
     .admin-card .btn {
         padding: 0.7rem 2rem;
         font-size: 0.9rem;
     }
-    
+
     .admin-card .card-body {
         padding: 1.5rem !important;
     }
-    
+
     /* 在小屏幕上调整卡片间距 */
     .row.g-4 {
         --bs-gutter-y: 1.5rem;
@@ -352,9 +383,10 @@ body {
 }
 
 @media (max-width: 600px) {
+
     /* 确保在超小屏幕上每行显示1列 */
-    .row-cols-md-2 > *,
-    .row-cols-lg-4 > * {
+    .row-cols-md-2>*,
+    .row-cols-lg-4>* {
         flex: 0 0 auto;
         width: 100%;
     }
@@ -364,20 +396,20 @@ body {
     .admin-card {
         margin-bottom: 20px;
     }
-    
+
     .admin-card-icon {
         font-size: 2.5rem;
     }
-    
+
     .admin-card .btn {
         padding: 0.6rem 1.5rem;
         font-size: 0.85rem;
     }
-    
+
     .admin-card .card-body {
         padding: 1.25rem !important;
     }
-    
+
     /* 调整小屏幕上的标题大小 */
     h2.text-center.text-primary.fw-bold {
         font-size: 1.8rem;
@@ -386,16 +418,17 @@ body {
 }
 
 @media (max-width: 400px) {
+
     /* 针对极小屏幕的额外优化 */
     .admin-card-icon {
         font-size: 2rem;
     }
-    
+
     .admin-card .btn {
         padding: 0.5rem 1.25rem;
         font-size: 0.8rem;
     }
-    
+
     .admin-card .card-body {
         padding: 1rem !important;
     }
@@ -496,7 +529,7 @@ body {
 }
 
 .carousel-caption-content {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 123, 255, 0.8);
     backdrop-filter: blur(10px);
     padding: 2rem;
     border-radius: 16px;
@@ -514,15 +547,11 @@ body {
     letter-spacing: -0.5px;
     line-height: 1.2;
     text-transform: uppercase;
-    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 .carousel-caption p {
     font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: #ffffff;
     margin-bottom: 0;
     font-weight: 300;
     line-height: 1.6;
@@ -534,6 +563,7 @@ body {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -600,11 +630,11 @@ body {
     .carousel-item {
         height: 450px;
     }
-    
+
     .carousel-caption h5 {
         font-size: 2.5rem;
     }
-    
+
     .carousel-caption p {
         font-size: 1.25rem;
     }
@@ -614,36 +644,36 @@ body {
     .carousel-item {
         height: 400px;
     }
-    
+
     .carousel-caption {
         padding: 1rem;
         bottom: 20% !important;
     }
-    
+
     .carousel-caption-content {
         padding: 1.5rem;
     }
-    
+
     .carousel-caption h5 {
         font-size: 2rem;
     }
-    
+
     .carousel-caption p {
         font-size: 1rem;
     }
-    
+
     .carousel-control-prev,
     .carousel-control-next {
         width: 60px;
         height: 60px;
     }
-    
+
     .carousel-indicators li {
         width: 10px;
         height: 10px;
         margin: 0 6px;
     }
-    
+
     .carousel-indicators li.active {
         width: 30px;
         height: 10px;
@@ -654,20 +684,20 @@ body {
     .carousel-item {
         height: 350px;
     }
-    
+
     .carousel-caption {
         bottom: 15% !important;
     }
-    
+
     .carousel-caption-content {
         padding: 1rem;
     }
-    
+
     .carousel-caption h5 {
         font-size: 1.5rem;
         margin-bottom: 1rem;
     }
-    
+
     .carousel-caption p {
         font-size: 0.9rem;
     }
@@ -1080,12 +1110,29 @@ body {
 }
 
 /* 延迟动画效果 */
-.departments-card:nth-child(1) { animation-delay: 0.1s; }
-.departments-card:nth-child(2) { animation-delay: 0.2s; }
-.departments-card:nth-child(3) { animation-delay: 0.3s; }
-.departments-card:nth-child(4) { animation-delay: 0.4s; }
-.departments-card:nth-child(5) { animation-delay: 0.5s; }
-.departments-card:nth-child(6) { animation-delay: 0.6s; }
+.departments-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.departments-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.departments-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.departments-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.departments-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.departments-card:nth-child(6) {
+    animation-delay: 0.6s;
+}
 
 .departments-card::before {
     content: '';
@@ -1237,19 +1284,19 @@ body {
         margin: 0 10px;
         padding: 1.5rem;
     }
-    
+
     .features-card .feature-icon i {
         font-size: 3.5rem;
     }
-    
+
     .departments-card {
         margin: 0 8px 25px 8px;
     }
-    
+
     .departments-card .card-img-container {
         height: 160px;
     }
-    
+
     .departments-card .card-body {
         height: calc(100% - 160px);
         padding: 1.25rem;
@@ -1261,25 +1308,25 @@ body {
         margin: 0 8px;
         padding: 1.25rem;
     }
-    
+
     .features-card .feature-icon i {
         font-size: 3rem;
     }
-    
+
     .departments-card {
         margin: 0 6px 20px 6px;
     }
-    
+
     .departments-card .card-text {
         font-size: 0.9rem;
         height: 60px;
         -webkit-line-clamp: 2;
     }
-    
+
     .departments-card .card-img-container {
         height: 140px;
     }
-    
+
     .departments-card .card-body {
         height: calc(100% - 140px);
         padding: 1rem;
@@ -1291,27 +1338,27 @@ body {
         margin: 0 0 25px 0;
         padding: 2rem;
     }
-    
+
     .departments-card {
         margin: 0 0 25px 0;
         max-width: 350px;
         margin-left: auto;
         margin-right: auto;
     }
-    
+
     .features h2,
     .departments h2 {
         font-size: 2rem;
     }
-    
+
     .features-card .feature-icon i {
         font-size: 3.5rem;
     }
-    
+
     .departments-card .card-img-container {
         height: 180px;
     }
-    
+
     .departments-card .card-body {
         height: auto;
     }
@@ -1321,11 +1368,11 @@ body {
     .departments-card {
         max-width: 100%;
     }
-    
+
     .departments h2 {
         font-size: 1.8rem;
     }
-    
+
     .departments-card .card-img-container {
         height: 160px;
     }
@@ -1443,6 +1490,7 @@ body {
         opacity: 0;
         transform: translateX(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -1596,6 +1644,7 @@ body {
         opacity: 0;
         transform: translateY(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1618,8 +1667,13 @@ body {
     margin-bottom: 25px;
 }
 
-.stats-card:nth-child(1) { animation-delay: 0.3s; }
-.stats-card:nth-child(2) { animation-delay: 0.4s; }
+.stats-card:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.stats-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
 
 .stats-card:hover {
     transform: translateY(-10px);
@@ -1702,7 +1756,8 @@ body {
 }
 
 /* 近期预约和排班卡片样式 */
-.schedule-card, .appointments-card {
+.schedule-card,
+.appointments-card {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: none;
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
@@ -1716,23 +1771,31 @@ body {
     margin-bottom: 25px;
 }
 
-.appointments-card { animation-delay: 0.5s; }
-.schedule-card { animation-delay: 0.6s; }
+.appointments-card {
+    animation-delay: 0.5s;
+}
 
-.schedule-card:hover, .appointments-card:hover {
+.schedule-card {
+    animation-delay: 0.6s;
+}
+
+.schedule-card:hover,
+.appointments-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
     border-color: rgba(0, 123, 255, 0.2);
 }
 
-.schedule-card .card-header, .appointments-card .card-header {
+.schedule-card .card-header,
+.appointments-card .card-header {
     background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
     border: none;
     padding: 1.5rem;
     border-radius: 20px 20px 0 0;
 }
 
-.schedule-card .card-header h5, .appointments-card .card-header h5 {
+.schedule-card .card-header h5,
+.appointments-card .card-header h5 {
     font-weight: 800;
     font-size: 1.25rem;
     letter-spacing: -0.5px;
@@ -1740,7 +1803,8 @@ body {
     color: white;
 }
 
-.schedule-card .card-body, .appointments-card .card-body {
+.schedule-card .card-body,
+.appointments-card .card-body {
     padding: 2rem;
     position: relative;
     z-index: 1;
@@ -1748,11 +1812,12 @@ body {
 
 /* 响应式设计 */
 @media (max-width: 992px) {
+
     /* 在中等屏幕上调整布局 */
     .doctor-profile-card {
         margin-bottom: 25px;
     }
-    
+
     .doctor-dashboard h2 {
         font-size: 2.2rem;
         margin-bottom: 1.5rem;
@@ -1763,35 +1828,35 @@ body {
     .carousel-item {
         height: 300px;
     }
-    
+
     .departments .card img {
         height: 150px;
     }
-    
+
     .doctor-avatar {
         width: 80px;
         height: 80px;
         margin-right: 1rem;
     }
-    
+
     /* 医生工作台响应式 */
     .doctor-profile-card .card-body {
         padding: 1.5rem;
     }
-    
+
     .doctor-avatar {
         width: 120px;
         height: 120px;
     }
-    
+
     .doctor-profile-card .card-title {
         font-size: 1.5rem;
     }
-    
+
     .stats-card .card-body {
         padding: 1.5rem;
     }
-    
+
     .stats-number {
         font-size: 3rem;
     }
@@ -1801,15 +1866,15 @@ body {
     .doctor-dashboard h2 {
         font-size: 1.8rem;
     }
-    
+
     .doctor-profile-card .card-title {
         font-size: 1.3rem;
     }
-    
+
     .stats-number {
         font-size: 2.5rem;
     }
-    
+
     .stats-card .card-body {
         padding: 1.25rem;
     }
